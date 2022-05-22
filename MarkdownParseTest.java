@@ -9,6 +9,19 @@ import java.util.ArrayList;
 
 public class MarkdownParseTest {
 
+
+    @Test
+    public void snippet3 () throws IOException {
+        ArrayList<String> forTest1 = new ArrayList<String>();
+        forTest1.add("https://www.twitter.com"); 
+        forTest1.add("https://sites.google.com/eng.ucsd.edu/cse-15l-spring-2022/schedule");
+        forTest1.add("https://cse.ucsd.edu/");
+
+        Path fileName = Path.of("snippet3.md");
+        String content = Files.readString(fileName);
+        assertEquals(forTest1, MarkdownParse.getLinks(content));
+    }
+    
     @Test
     public void snippet2 () throws IOException {
         ArrayList<String> forTest1 = new ArrayList<String>();
